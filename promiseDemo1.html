@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+
+        function prom(complete)
+        {
+            return new Promise(function(resolve,reject)
+            {
+                if (complete)
+                {
+                    resolve("Successful")
+                }
+
+                else
+                {
+                    reject("UnsucessFul")
+                }
+            });
+
+        }
+               // Arrow Function
+            let onFullfillment = (result) =>
+            {
+                console.log("Fullfilled : " + result)
+            }
+
+            let onRejection = (result) =>
+            {
+                console.log("Rejection : " + result)
+            }
+
+            prom(false).then(onFullfillment).catch(onRejection);
+
+
+
+        
+    </script>
+    
+</body>
+</html>
